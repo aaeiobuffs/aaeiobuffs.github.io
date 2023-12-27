@@ -1,0 +1,142 @@
+/* navigation bar */
+nav {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 15px 0; /* Increased vertical padding */
+    z-index: 1000; /* Make sure it overlaps */
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    height: 50px; /* Adjust as needed */
+}
+
+#home {
+    padding-top: 150px; /* Increased to accommodate larger navbar */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* sections */
+section {
+    padding: 60px;
+    padding-top: 100px; /* Adjust this value to match the height of your navbar */
+    padding-bottom: 100px;
+    margin-top: 60px;
+    margin-bottom: 60px; /* Negative margin to offset the padding */
+    border-bottom: 1px solid #ccc;
+}
+
+/* For browsers that support scroll-margin-top */
+section::before {
+    content: '';
+    display: block;
+    height: 100px; /* Same as padding-top */
+    margin-top: -100px; /* Same as margin-top */
+    visibility: hidden;
+}
+
+
+/* events */
+.timeline {
+    border-left: 4px solid #333;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.event {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.event-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+
+.event-description {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.event::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+/* Partners */
+#partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Adds space between each partner div */
+}
+
+.partner {
+    text-align: center;
+    width: 100%; /* Full width in small screens */
+}
+
+.partner img {
+    max-width: 100px; /* Adjust the size as needed */
+    margin-bottom: 10px;
+}
+
+.partner a {
+    color: #333;
+    text-decoration: none;
+}
+
+.partner a:hover {
+    text-decoration: underline;
+}
+
+/* Larger Screens: Align partners horizontally */
+@media (min-width: 768px) {
+    #partners {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .partner {
+        flex-basis: calc(25% - 20px); /* Each item takes up a third of the container width minus the gap */
+        box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    }
+}
+
+
