@@ -1,13 +1,20 @@
 /* navigation bar */
-nav {
+.navbar-container {
     background-color: #333;
     color: white;
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 15px 0; /* Increased vertical padding */
-    z-index: 1000; /* Make sure it overlaps */
+    padding: 15px 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    flex-grow: 1; /* Take up remaining space */
 }
 
 nav ul {
@@ -15,12 +22,11 @@ nav ul {
     list-style: none;
     margin: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 10px 20px;
 }
 
 nav a {
@@ -28,8 +34,51 @@ nav a {
     text-decoration: none;
 }
 
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/* For small screens, such as mobile phones */
+@media only screen and (max-width: 600px) {
+    .navbar-container {
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        order: 2; /* Move nav below menu icon */
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        order: 1; /* Move menu icon to the top */
+    }
+
+    .logo {
+        padding-top: 10px;
+        order: 3; /* Move logo to the bottom */
+    }
+}
+
+
 .logo {
-    height: 50px; /* Adjust as needed */
+    height: 25px; /* Adjust as needed */
 }
 
 #home {
