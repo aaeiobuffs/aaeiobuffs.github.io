@@ -134,7 +134,7 @@ section::before {
     }
 
     .partner {
-        flex-basis: calc(25% - 20px); /* Each item takes up a third of the container width minus the gap */
+        flex-basis: calc(20% - 20px); /* Each item takes up a third of the container width minus the gap */
         box-sizing: border-box; /* Includes padding and border in the element's total width and height */
     }
 }
